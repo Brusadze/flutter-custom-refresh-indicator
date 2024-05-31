@@ -1,3 +1,6 @@
+
+import 'package:example/indicators/flying_car_indicator.dart';
+import 'package:example/indicators/plane_indicator.dart';
 import 'package:example/screens/envelope_indicator_screen.dart';
 import 'package:example/screens/horizontal_screen.dart';
 import 'package:example/screens/presentation_screen.dart';
@@ -39,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/fetch-more': (context) => const FetchMoreScreen(),
         '/horizontal': (context) => const HorizontalScreen(),
         '/programmatically-controlled': (context) => const ProgrammaticallyControlled(),
+        '/remake-for-plane-as-car': (context) => const CarIndicator(),
       },
     );
   }
@@ -175,6 +179,20 @@ class MainScreen extends StatelessWidget {
                 context,
                 '/fetch-more',
               ),
+            ),
+            const SizedBox(height: 15),
+
+            ElevatedButton(
+              child: Container(
+                height: 50,
+                alignment: Alignment.center,
+                child: const Text("Plane modified as car"),
+              ),
+              onPressed: () => Navigator.pushNamed(
+                context,
+                '/remake-for-plane-as-car',
+              ),
+              
             ),
           ],
         ),
